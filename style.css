@@ -1,8 +1,8 @@
 :root {
     --bg-color: #101010;
     --surface-color: #1a1a1a;
-    --primary-color: #00BFFF; /* Deep Sky Blue */
-    --secondary-color: #9370DB; /* Medium Purple */
+    --primary-color: #1975C8; /* Blue */
+    --secondary-color: #055B96; /* Dark Blue */
     --text-light: #e0e0e0;
     --text-dark: #888;
     --border-color: #2a2a2a;
@@ -39,18 +39,18 @@ body {
     font-size: 2.5rem;
     font-weight: 500;
     margin: 0;
-    background: -webkit-linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #FFF;
+    text-align: left;
 }
 .header p {
     color: var(--text-dark);
-    margin: 0.5rem 0 0;
+    text-align: left;
+    margin: 0;
 }
 .content-area {
     flex-grow: 1;
     display: grid;
-    grid-template-columns: 1fr 400px;
+    grid-template-columns: 1fr 500px;
     gap: 2rem;
     height: 0;
 }
@@ -77,8 +77,7 @@ body {
     transition: border-color 0.3s, background-color 0.3s;
 }
 #upload-box:hover, #upload-box.dragover {
-    border-color: var(--primary-color);
-    background-color: rgba(0, 191, 255, 0.05);
+    border-color: #FFF;
 }
 #upload-box p {
     font-size: 1rem;
@@ -104,12 +103,12 @@ body {
     width: 32px;
     height: 32px;
     background-color: var(--primary-color);
-    color: var(--bg-dark);
+    color: #FFF;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 1rem;
     cursor: pointer;
     box-shadow: 0 0 0 4px rgba(0, 191, 255, 0.3);
@@ -181,23 +180,30 @@ body {
 }
 
 .recommendation-card {
-    background-color: var(--bg-color);
-    border: 1px solid var(--border-color);
-    border-left: 4px solid var(--text-dark);
     border-radius: 8px;
     padding: 1rem;
     cursor: pointer;
     transition: border-color 0.3s, background-color 0.3s;
 }
+
 .recommendation-card:hover {
     background-color: #2a2a2a;
 }
 .recommendation-card.active {
     border-left-color: var(--primary-color);
 }
-.recommendation-card.type-good { border-left-color: var(--success-color); }
-.recommendation-card.type-improvement { border-left-color: var(--warning-color); }
-.recommendation-card.type-critical { border-left-color: var(--error-color); }
+
+/* ADD THESE NEW RULES */
+.recommendation-card.type-good .card-number {
+    background-color: var(--success-color);
+}
+.recommendation-card.type-improvement .card-number {
+    background-color: var(--warning-color);
+}
+.recommendation-card.type-critical .card-number {
+    background-color: var(--error-color);
+}
+
 .card-header {
     display: flex;
     align-items: center;
@@ -209,7 +215,7 @@ body {
     height: 32px;
     flex-shrink: 0;
     background-color: var(--primary-color);
-    color: var(--bg-dark);
+    color: var(--bg-color);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -219,10 +225,11 @@ body {
 .card-header h3 {
     margin: 0;
     font-size: 1.1rem;
+    font-weight: 500;
 }
 .card-body p {
     margin: 0;
-    color: var(--text-dark);
+    color: #FFFFFF;
 }
 .loader {
     border: 4px solid #f3f3f3;
