@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UXorcist - AI UX Analyzer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <header class="header">
+            <h1>UXorcist</h1>
+            <p>Exorcise bad UX from your designs. By the power of Nielsen, I compel you!</p>
+        </header>
+
+        <main class="content-area">
+            <div class="image-panel">
+                <div id="upload-box">
+                    <input type="file" id="upload-input" accept="image/*">
+                    <p>Drag & Drop or Click to Upload Screenshot</p>
+                </div>
+                <div id="image-display-container">
+                    <img id="displayed-image" src="">
+                    <div id="hotspots-container"></div>
+                </div>
+            </div>
+
+            <div class="recommendations-panel">
+                <div class="recommendations-header">
+                    <h2>AI Analysis</h2>
+                    <button id="reset-btn" class="hidden" title="Start New Analysis">
+                        <span class="material-symbols-outlined">refresh</span>
+                    </button>
+                </div>
+                <div id="recommendations-list">
+                    <p id="recommendations-placeholder">Upload an image to begin your UX analysis.</p>
+                </div>
+                <div class="loader hidden"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
