@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
         recommendationsList.innerHTML = '';
         hotspotsContainer.innerHTML = '';
 
-        const apiKey = ""; // IMPORTANT: Add your API key here
+        const apiKey = "AIzaSyCkDWlEwCfcz2FBN4eIuGk8RBRgMNebUck"; // IMPORTANT: Add your API key here
         const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
         
         const systemPrompt = "You are a world-class UX/UI design expert. Your task is to analyze the provided screenshot of a user interface. Based on established usability principles, primarily Jakob Nielsen's 10 Usability Heuristics, identify up to 5 key areas of feedback. For each point, provide a short title, a concise recommendation, classify it as 'good', 'improvement', or 'critical', and estimate the (x, y) coordinates of the relevant element as percentages from the top-left corner of the image.";
