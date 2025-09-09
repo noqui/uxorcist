@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         imageDisplayContainer.style.display = 'none';
         displayedImage.src = '';
         hotspotsContainer.innerHTML = '';
-        recommendationsList.innerHTML = '<p id="recommendations-placeholder">Upload an image to begin your UX analysis.</p>';
+        recommendationsList.innerHTML = '<p id="recommendations-placeholder">Upload an image to begin your UXorcism.</p>';
         if (placeholder) placeholder.classList.remove('hidden');
         resetBtn.classList.add('hidden');
         uploadInput.value = '';
