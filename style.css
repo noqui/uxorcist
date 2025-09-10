@@ -23,6 +23,11 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+h1, h2, h3, h4 {
+    font-weight: 500;
+}
+
 .main-container {
     width: 100%;
     height: 100%;
@@ -78,6 +83,15 @@ body {
 }
 #upload-box:hover, #upload-box.dragover {
     border-color: #FFF;
+}
+#upload-box .upload-icon {
+    font-size: 4rem;
+    color: var(--border-color);
+    margin-bottom: 1rem;
+    transition: color 0.3s;
+}
+#upload-box:hover .upload-icon, #upload-box.dragover .upload-icon {
+    color: var(--text-light);
 }
 #upload-box p {
     font-size: 1rem;
@@ -164,7 +178,6 @@ body {
     color: #FFF;
     transform: rotate(90deg);
 }
-
 #recommendations-list {
     overflow-y: auto;
     padding: 1.5rem;
@@ -173,27 +186,25 @@ body {
     gap: 1.5rem;
     flex-grow: 1;
 }
-
 #recommendations-list p{
     font-size: 1 rem;
     color: #888888;
 }
-
 .recommendation-card {
     border-radius: 8px;
     padding: 1rem;
     cursor: pointer;
     transition: border-color 0.3s, background-color 0.3s;
 }
-
 .recommendation-card:hover {
     background-color: #2a2a2a;
+}
+.recommendation-card:hover p{
+    color: #FFF;
 }
 .recommendation-card.active {
     border-left-color: var(--primary-color);
 }
-
-/* ADD THESE NEW RULES */
 .recommendation-card.type-good .card-number {
     background-color: var(--success-color);
 }
@@ -203,7 +214,6 @@ body {
 .recommendation-card.type-critical .card-number {
     background-color: var(--error-color);
 }
-
 .card-header {
     display: flex;
     align-items: center;
@@ -235,8 +245,8 @@ body {
     border: 4px solid #f3f3f3;
     border-top: 4px solid var(--primary-color);
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     animation: spin 1s linear infinite;
     position: absolute;
     top: 50%;
@@ -246,3 +256,44 @@ body {
 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 .hidden { display: none; }
 
+.card-footer { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color); }
+.suggest-fix-btn {
+    background-color: var(--surface-color); color: #FFF; border: 1px solid #5F5F5F; padding: 8px 12px; border-radius: 6px;
+    font-family: 'Poppins', sans-serif; font-weight: 500; cursor: pointer; transition: background-color 0.2s;
+    min-width: 120px; /* Give button a consistent width */
+    text-align: center;
+}
+.suggest-fix-btn:hover { background-color: var(--surface-color); border: 1px solid #FFF; }
+.suggest-fix-btn:disabled { background-color: #555; cursor: not-allowed; }
+.solution-container { margin-top: 1rem; font-size: 0.9rem; }
+.solution-container h4 { margin: 0 0 0.5rem 0; color: var(--text-light); }
+.solution-container p { margin: 0 0 1rem 0 !important; color: var(--text-dark) !important; }
+.color-suggestion { display: flex; align-items: center; gap: 10px; margin-bottom: 5px; }
+.color-swatch { width: 20px; height: 20px; border-radius: 4px; border: 1px solid var(--border-color); }
+.microcopy-suggestion { background-color: var(--bg-dark); border: 1px solid var(--border-color); padding: 8px; border-radius: 4px; font-style: italic; }
+
+/* --- NEW: Loading Dots Animation --- */
+.loading-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    height: 21px; /* Match button padding height */
+}
+.loading-dots span {
+    width: 6px;
+    height: 6px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: bounce 1s infinite;
+}
+.loading-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.loading-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+@keyframes bounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1.0); }
+}
